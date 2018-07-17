@@ -16,6 +16,7 @@ class Kmeans:
         self.label = []
         self.centroidx = []
         self.centroidy = []
+        self.c_data = 0
     def createCluster(self, num_clusters):
         '''
         Create n(num_clusters) clusters using normal distribution.
@@ -26,26 +27,26 @@ class Kmeans:
             label:
             total_data:
         '''
-        c_data = num_clusters  # number  of centroids of the generated data
-        quant = np.zeros(c_data)  # quantity of datapoints in each cluster
-        centerx = np.zeros(c_data)  # mean of the normal distribuition of the cluster
+        self.c_data = num_clusters  # number  of centroids of the generated data
+        quant = np.zeros(self.c_data)  # quantity of datapoints in each cluster
+        self.centerx = np.zeros(self.c_data)  # mean of the normal distribuition of the cluster
         # center of the cluster
-        centery = np.zeros(c_data)  # mean of the normal distribuition of the cluster
+        self.centery = np.zeros(self.c_data)  # mean of the normal distribuition of the cluster
         # center of the cluster
-        std = np.zeros(c_data)  # standard deviation of the cluster
-        for i in xrange(c_data):
+        std = np.zeros(self.c_data)  # standard deviation of the cluster
+        for i in xrange(self.c_data):
             quant[i] = np.random.randint(10, 40)
-            centerx[i] = np.random.randint(10, 60)
-            centery[i] = np.random.randint(10, 60)
+            self.centerx[i] = np.random.randint(10, 60)
+            self.centery[i] = np.random.randint(10, 60)
             std[i] = np.random.randint(1, 5)
 
         self.total_data = int(quant.sum())
         self.x = []
         self.y = []
         self.label = []
-        for i in xrange(c_data):
-            self.x = np.append(self.x, np.random.normal(int(centerx[i]), int(std[i]), int(quant[i])))
-            self.y = np.append(self.y, np.random.normal(int(centery[i]), int(std[i]), int(quant[i])))
+        for i in xrange(self.c_data):
+            self.x = np.append(self.x, np.random.normal(int(self.centerx[i]), int(std[i]), int(quant[i])))
+            self.y = np.append(self.y, np.random.normal(int(self.centery[i]), int(std[i]), int(quant[i])))
             for j in xrange(int(quant[i])):
                 self.label = np.append(self.label, i)
 
@@ -61,23 +62,29 @@ class Kmeans:
         :param num_centroids:
         :return:
         '''
+        matrix = np.column_stack((x, y))
+        data = np.zeros((total_data, 3))
+        data[:, :2] = matrix
+        s = False
         while (not s):
             try:
                 c_test = num_centroids  # number of centroids guessed
                 centroidx = []
                 centroidy = []
                 flag = False
-                comp = np.zeros(int(quant.size))
+                centroidupx = np.zeros(c_test)
+                centroidupy = np.zeros(c_test)
+                comp = np.zeros(int(self.c_data))
                 for i in xrange(c_test):
-                    if ((comp.sum() == quant.size) and (i < c_test)):
-                        comp = np.zeros(int(quant.size))
+                    if ((comp.sum() == self.c_data) and (i < c_test)):
+                        comp = np.zeros(int(self.c_data))
                     while (not flag):
-                        j = np.random.randint(0, int(quant.size))
+                        j = np.random.randint(0, int(self.c_data))
                         if comp[j] == 0:
                             comp[j] = 1
                             flag = True
-                    centroidx = np.append(centroidx, np.random.normal(centerx[j], np.random.randint(5, 10), 1))
-                    centroidy = np.append(centroidy, np.random.normal(centery[j], np.random.randint(5, 10), 1))
+                    centroidx = np.append(centroidx, np.random.normal(self.centerx[j], np.random.randint(5, 10), 1))
+                    centroidy = np.append(centroidy, np.random.normal(self.centery[j], np.random.randint(5, 10), 1))
                     flag = False
                 centroids = np.column_stack((centroidx, centroidy))
                 new_label_new = np.zeros(matrix[:, 0].size)
@@ -110,7 +117,7 @@ class Kmeans:
                         centroidupy = centroids[:, 1]
                         s = True
 
-                    plt.scatter(x_dinamico, y_dinamico, c=new_label_new, cmap='rainbow')
+                    plt.scatter(x, y, c=new_label_new, cmap='rainbow')
                     plt.scatter(centroidx, centroidy, c='green', marker='8')
                     plt.scatter(centroidupx, centroidupy, c='black')
                     plt.grid(True)
@@ -119,9 +126,9 @@ class Kmeans:
 
             except Exception as e:
                 print (str(e))
-        return 0
+        return matrix, centroids, data
 
-    def ComputeElbow(self, num_centroids):
+    def ComputeElbow(self, num_centroids, matrix, centroids, data):
         wcss = np.zeros(num_centroids * 2)
         w = 0
         while ((w < ((num_centroids * 2) - 1))):
