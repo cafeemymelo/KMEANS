@@ -5,8 +5,17 @@ import time
 import os
 
 class Kmeans:
-    total_data = 0
+    """
 
+    """
+    def __init__(self):
+        #global variables
+        self.total_data = 0
+        self.x = []
+        self.y = []
+        self.label = []
+        self.centroidx = []
+        self.centroidy = []
     def createCluster(self, num_clusters):
         '''
         Create n(num_clusters) clusters using normal distribution.
@@ -30,21 +39,21 @@ class Kmeans:
             centery[i] = np.random.randint(10, 60)
             std[i] = np.random.randint(1, 5)
 
-        total_data = int(quant.sum())
-        x = []
-        y = []
-        label = []
+        self.total_data = int(quant.sum())
+        self.x = []
+        self.y = []
+        self.label = []
         for i in xrange(c_data):
-            x = np.append(x, np.random.normal(int(centerx[i]), int(std[i]), int(quant[i])))
-            y = np.append(y, np.random.normal(int(centery[i]), int(std[i]), int(quant[i])))
+            self.x = np.append(self.x, np.random.normal(int(centerx[i]), int(std[i]), int(quant[i])))
+            self.y = np.append(self.y, np.random.normal(int(centery[i]), int(std[i]), int(quant[i])))
             for j in xrange(int(quant[i])):
-                label = np.append(label, i)
+                self.label = np.append(self.label, i)
 
-        return x,y,label,total_data
+        return self.x,self.y,self.label,self.total_data
 
-    def ComputeKmeans(self,x,y,label,total_data,num_centroids = None):
+    def ComputeKmeans(self, x, y, label, total_data,num_centroids = None):
         '''
-
+        Cluster a dataset using Kmeans Method
         :param x:
         :param y:
         :param label:
@@ -58,8 +67,6 @@ class Kmeans:
                 centroidx = []
                 centroidy = []
                 flag = False
-                centroidxup = np.zeros(c_test)
-                centroidyup = np.zeros(c_test)
                 comp = np.zeros(int(quant.size))
                 for i in xrange(c_test):
                     if ((comp.sum() == quant.size) and (i < c_test)):
@@ -73,10 +80,6 @@ class Kmeans:
                     centroidy = np.append(centroidy, np.random.normal(centery[j], np.random.randint(5, 10), 1))
                     flag = False
                 centroids = np.column_stack((centroidx, centroidy))
-                # plt.scatter(x_dinamico,y_dinamico, c=label_dinamico, cmap = 'rainbow')
-                # plt.scatter(centroidx,centroidy,c = 'green')
-                # plt.grid(True)
-                # plt.show()
                 new_label_new = np.zeros(matrix[:, 0].size)
                 new_label_old = np.ones(matrix[:, 0].size)
                 dist = np.zeros(centroids[:, 0].size)
@@ -94,8 +97,7 @@ class Kmeans:
                     else:
                         new_label_old = np.copy(new_label_new)
                         unique = np.unique(new_label_new)
-                        data[:, 2] = new_label_new  # update matrix label
-                        # update centroids(tem que somar cada x e y dos labels e tirar a media)
+                        data[:, 2] = new_label_new
                         for i in xrange(new_label_new.size):
                             for j in xrange(unique.size):
                                 if (new_label_old[i] == unique[j]):
@@ -104,15 +106,17 @@ class Kmeans:
                         centroidup = npi.GroupBy(data[:, 2]).sum(data)[1]
                         centroidup = centroidup[:, :2]
                         centroids = centroidup / a
-                        s = True
                         centroidupx = centroids[:, 0]
                         centroidupy = centroids[:, 1]
+                        s = True
+
                     plt.scatter(x_dinamico, y_dinamico, c=new_label_new, cmap='rainbow')
                     plt.scatter(centroidx, centroidy, c='green', marker='8')
                     plt.scatter(centroidupx, centroidupy, c='black')
                     plt.grid(True)
                     plt.show()
                     iter = iter + 1
+
             except Exception as e:
                 print (str(e))
         return 0
