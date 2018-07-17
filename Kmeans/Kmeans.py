@@ -4,11 +4,6 @@ import numpy_indexed as npi
 import time
 import os
 
-###################################################################################################
-#
-# media em x move o cluster na horizontal
-# media em y move o cluster na vertical
-###################################################################################################
 class Kmeans:
     total_data = 0
 
@@ -48,9 +43,18 @@ class Kmeans:
         return x,y,label,total_data
 
     def ComputeKmeans(self,x,y,label,total_data,num_centroids = None):
+        '''
+
+        :param x:
+        :param y:
+        :param label:
+        :param total_data:
+        :param num_centroids:
+        :return:
+        '''
         while (not s):
             try:
-                c_test = r  # number of centroids guessed
+                c_test = num_centroids  # number of centroids guessed
                 centroidx = []
                 centroidy = []
                 flag = False
@@ -113,6 +117,20 @@ class Kmeans:
                 print (str(e))
         return 0
 
-    def ComputeElbow(self):
+    def ComputeElbow(self, num_centroids):
+        wcss = np.zeros(num_centroids * 2)
+        w = 0
+        while ((w < ((num_centroids * 2) - 1))):
+            try:
+                w = w + 1
+                wcss_sum = np.zeros((matrix[:, 0].size, 2))
+                for i in xrange(matrix[:, 0].size):
+                    wcss_sum[i] = (np.sqrt(sum((matrix[i, :] - centroids[int(data[i, 2:]), :]) ** 2))) ** 2
+                wcss[w] = wcss_sum.sum()
+                print w
+            except Exception as e:
+                w = w - 1
+                print (str(e))
+
 
         return 0

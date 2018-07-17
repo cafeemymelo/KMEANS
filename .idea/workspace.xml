@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b944699-3770-445c-a467-49a6aa4855b9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/cafee_000.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kmeans/Kmeans.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kmeans/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kmeans/Kmeans.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kmeans/Kmeans.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,76 +12,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.62083334">
+    <splitter split-orientation="horizontal" split-proportion="0.55833334">
       <split-first>
         <leaf>
-          <file leaf-file-name="Kmeans.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Kmeans.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Kmeans/Kmeans.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+                <state relative-caret-position="583">
+                  <caret line="123" column="16" lean-forward="true" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../drone-control/drone-server/server.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="5" selection-start-line="16" selection-end-line="16" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="droneclient.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../drone-control/drone-lib/droneclient.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
-                  <caret line="80" column="50" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="50" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dronecontrol.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../drone-control/drone-lib/dronecontrol.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-746" />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dccommands.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/../drone-control/drone-lib/dccommands.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="597">
-                  <caret line="355" column="33" selection-start-line="355" selection-start-column="25" selection-end-line="355" selection-end-column="33" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="client-test-virtual-joystick.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../drone-control/drone-clients/test-virtual-joystick/client-test-virtual-joystick.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2239" />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="client-test-shell.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../drone-control/drone-clients/test-shell/client-test-shell.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="client-test-auto-mission.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../drone-control/drone-clients/test-auto-mission/client-test-auto-mission.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
                 </state>
               </provider>
             </entry>
@@ -113,8 +51,8 @@
           <file leaf-file-name="KMEANS.py" pinned="false" current-in-tab="true">
             <entry file="file://$USER_HOME$/PycharmProjects/Kmeans/KMEANS.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="176" selection-start-line="176" selection-end-line="177" />
+                <state relative-caret-position="272">
+                  <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -248,33 +186,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Kmeans/Kmeans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../drone-control/drone-server/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" selection-start-line="16" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/Kmeans/KMEANS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="176" selection-start-line="176" selection-end-line="177" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../drone-control/drone-clients/test-virtual-joystick/client-test-virtual-joystick.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2239" />
@@ -294,6 +205,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../drone-control/drone-lib/dccommands.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="346" column="52" lean-forward="true" selection-start-line="346" selection-start-column="52" selection-end-line="346" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../drone-control/drone-lib/dronecontrol.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-746" />
@@ -306,10 +224,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../drone-control/drone-lib/dccommands.py">
+    <entry file="file://$PROJECT_DIR$/../drone-control/drone-server/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="355" column="33" selection-start-line="355" selection-start-column="25" selection-end-line="355" selection-end-column="33" />
+        <state relative-caret-position="272">
+          <caret line="16" column="5" selection-start-line="16" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/Kmeans/KMEANS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kmeans/Kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="123" column="16" lean-forward="true" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
