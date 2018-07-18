@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy_indexed as npi
 import time
 import os
-def ComputeKmeans(x, y, label, total_data, num_centroids=None):
+def ComputeKmeans(x, y, label, total_data, num_centroids):
     """
     Cluster a dataset using Kmeans Method
     :param x:
@@ -34,8 +34,8 @@ def ComputeKmeans(x, y, label, total_data, num_centroids=None):
                     if comp[j] == 0:
                         comp[j] = 1
                         flag = True
-                centroidx = np.append(centroidx, np.random.normal(centerx[j], np.random.randint(5, 10), 1))
-                centroidy = np.append(centroidy, np.random.normal(centery[j], np.random.randint(5, 10), 1))
+                centroidx = np.append(centroidx, np.random.normal(np.random.randint(10, 60), np.random.randint(5, 10), 1))
+                centroidy = np.append(centroidy, np.random.normal(np.random.randint(10, 60), np.random.randint(5, 10), 1))
                 flag = False
             centroids = np.column_stack((centroidx, centroidy))
             new_label_new = np.zeros(matrix[:, 0].size)
